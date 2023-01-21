@@ -1,33 +1,23 @@
 function dropdownMenu() {
-  let drop = document.querySelector(".drop_container");
-  let drop1 = document.querySelector(".container_box");
-  let btn = document.querySelector("#btn_drop");
+  let container = document.querySelector(".container_box");
+  let drop = document.querySelector(".drop_box");
+  let btn = document.querySelector("#btn_");
+  let close = document.querySelector(".close");
 
-  //   btn.addEventListener("click", function () {
-  //     // if (drop.style.display == "none") {
-  //     drop.style.display = "block";
-  //     // } else {
-  //     //   drop.style.display = "none";
-  //     // }
-  //   });
-  btn.onclick = function () {
-    drop1.style.display = "block";
-    drop.style.display = "block";
-  };
+  container.style.display = "none";
 
-  drop1.addEventListener("click", function (event) {
-    // if (event.target == drop) {
-    drop.style.display = "none";
-    // }
+  close.addEventListener("click", () => {
+    container.style.display = "none";
   });
 
-  //   window.addEventListener("click", function () {
-  //     const myTimeout = setTimeout(function () {
-  //       if (drop.style.display == "block") {
-  //         drop.style.display = "none";
-  //         console.log("aaaaa");
-  //       }
-  //     }, 500);
-  //   });
+  btn.addEventListener("click", () => {
+    if (container.style.display == "none") {
+      container.style.display = "block";
+      drop.style.display = "block";
+    } else {
+      container.style.display = "none";
+      drop.style.display = "none";
+    }
+  });
 }
 dropdownMenu();
